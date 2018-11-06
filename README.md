@@ -1,4 +1,4 @@
-# Node with MySQL BoilerPlate/Framework
+# Asset Tracking System
 
 A simple and structured way boilerplate for Node with MySQL, equipped with MVC layer model with basic validation of schema and common error handler, authentication and easily pluggable code base.
 
