@@ -21,7 +21,7 @@ function addUser(userData) {
 }
 
 
-function updateUser(id,userData,callback) {
+function updateUser(id,userData) {
     return new Promise((resolve,reject) => {
         userModel.updateUser(id,userData).then((data)=>{
             resolve(data);

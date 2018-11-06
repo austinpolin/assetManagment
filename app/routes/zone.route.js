@@ -55,11 +55,27 @@ function getZoneById(req, res){
 }
 
 function deleteZone(req, res){
-
+    var delId = req.params.id;
+    zoneService.deleteZone(delId).then((data)=>{
+      res.json(data);
+    }).catch((err)=>{
+        res.json(err);
+    });
 }
 
 function updateZone(req, res){
+    var zoneData=req.body;
+    var id = req.params.id;
+    var json_format = iValidator.json_schema(schema.postSchema, zoneData, "zone");
+    if (json_format.valid == false) {
+        return res.status(422).send(json_format.errorMessage);
+     }
+    zoneService.updateZone(id,zoneData).then((data)=>{
+       res.json(data);
+   }).catch((err)=>{
 
+       res.json(err);
+    });
 }
 
 

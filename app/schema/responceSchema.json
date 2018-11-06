@@ -8,14 +8,34 @@
 			}
 		},
 		"getAll":{
-			"statusCode": 200,
-			"name": "GetAllData",
-			"message": "All Data"
+			"success": {
+				"statusCode": 200,
+				"name": "GetAllData",
+				"message": "All Data"
+			}
+
 		},
 		"getById":{
-			"statusCode": 200,
-			"name": "GetData",
-			"message": "Get data by id"
+			"success": {
+				"statusCode": 200,
+				"name": "GetData",
+				"message": "Get data by id"
+			}
+		},
+		"updateData":{
+			"success": {
+				"statusCode": 200,
+				"name": "UpdateData",
+				"message": "Given data is updated"
+			}
+
+		},
+		"deleteData":{
+			"success": {
+				"statusCode": 200,
+				"name": "DeleteData",
+				"message": "Given data is deleted"
+			}
 		}
 	},
 	"errorMsg": {
@@ -26,7 +46,7 @@
 				"message": "AllredyExitsError Entity",
 				"details": {
 					"codes": [
-						"Allredy_Exits"
+						"alredyExits"
 					],
 					"messages": [{
 						"alredyExits": "Given data is allredy exits"
@@ -41,12 +61,20 @@
 				"message": "Not Exits Error Entity",
 				"details": {
 					"codes": [
-						"Not_Exits"
+						"alredyExits"
 					],
 					"messages": [{
-						"alredyExits": "Given data is not exits"
+						"alredyExits": "Given parms is not exits"
 					}]
 				}
+			}
+		},
+		"dbProblem":{
+			"error": {
+				"statusCode": 404,
+				"name": "DatabaseError",
+				"message": "Database Error"
+
 			}
 		}
 

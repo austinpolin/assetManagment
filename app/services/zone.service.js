@@ -30,12 +30,24 @@ function getAllZone(){
     });
 }
 
-function updateZone(){
-
+function updateZone(id,zoneData){
+    return new Promise((resolve,reject) => {
+        zoneModel.updateZone(id,zoneData).then((data)=>{
+            resolve(data);
+        }).catch((err) => {
+            reject(err);
+        })
+    })
 }
 
-function deleteZone(){
-
+function deleteZone(id){
+    return new Promise((resolve,reject) => {
+        zoneModel.deleteZone(id).then((data)=>{
+            resolve(data);
+        }).catch((err) => {
+            reject(err);
+        })
+    })
 }
 
 function getZoneById(id){

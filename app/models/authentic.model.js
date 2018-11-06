@@ -9,7 +9,7 @@ var authenticModel = {
 
 function authentic(authenticData) {
     return new Promise((resolve, reject) => {
-        db.query(`SELECT * FROM user WHERE username ='${authenticData.username}'`, (error, rows, fields) => {
+        db.query(`SELECT * FROM userInfo WHERE email ='${authenticData.username}'`, (error, rows, fields) => {
             if (error) {
                 reject(error);
             } else {
@@ -19,17 +19,6 @@ function authentic(authenticData) {
                 }else{
                     reject({"success":false,"message":"password doesnot match"});
                 }
-                // bcrypt.compare(authenticData.password, rows[0].password, function (err, isMatch) {
-                //     if (err) {
-                //         reject(error);
-                //     } else if (isMatch) {
-                //         resolve(rows);
-                //     }
-                //     else {
-                //         reject({"success":false,"message":"password doesnot match"});
-                //     }
-                // });
-
             }
         });
     });
