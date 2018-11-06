@@ -1,0 +1,56 @@
+{
+	"successMsg": {
+		"created": {
+			"success": {
+				"statusCode": 200,
+				"name": "Created",
+				"message": "Given data is saved"
+			}
+		},
+		"getAll":{
+			"statusCode": 200,
+			"name": "GetAllData",
+			"message": "All Data"
+		},
+		"getById":{
+			"statusCode": 200,
+			"name": "GetData",
+			"message": "Get data by id"
+		}
+	},
+	"errorMsg": {
+		"allredyexits": {
+			"error": {
+				"statusCode": 409,
+				"name": "Conflict",
+				"message": "AllredyExitsError Entity",
+				"details": {
+					"codes": [
+						"Allredy_Exits"
+					],
+					"messages": [{
+						"alredyExits": "Given data is allredy exits"
+					}]
+				}
+			}
+		},
+		"doesnotExits": {
+			"error": {
+				"statusCode": 404,
+				"name": "Notfound",
+				"message": "Not Exits Error Entity",
+				"details": {
+					"codes": [
+						"Not_Exits"
+					],
+					"messages": [{
+						"alredyExits": "Given data is not exits"
+					}]
+				}
+			}
+		}
+
+
+	}
+	
+}

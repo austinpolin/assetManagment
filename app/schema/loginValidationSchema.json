@@ -1,0 +1,32 @@
+{
+    "getSchema":{
+       "type": "object",
+       "required": [
+         "id"     
+       ],
+       "properties": {
+         "id" : {
+           "type": "string"
+         }
+       }
+    },
+    "postSchema":{
+        "type": "object",
+        "required": [
+          "username",
+          "password"    
+        ],
+        "properties": {
+          "username" : {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 10
+          },
+          "password" : {
+            "type" : "string",
+            "minLength": 1,
+            "maxLength": 10
+          }
+        }
+     }
+}
