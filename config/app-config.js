@@ -11,6 +11,7 @@ var bodyParser = require('body-parser');
 var UserRoute = require('../app/routes/user.route');
 var AuthenticRoute = require('../app/routes/authentic.route');
 var ZoneRoute = require('../app/routes/zone.route');
+var DeviceRoute = require('../app/routes/device.route');
 var MqttSubsriber = require('../app/services/mqtt/subscriber');
 var TcpServer = require('../app/services/tcp/tcp');
 var errorCode = require('../common/error-code')
@@ -18,7 +19,7 @@ var errorMessage = require('../common/error-methods')
 var checkToken = require('./secureRoute');
 var mqtt = require('mqtt');
 var mosca = require('mosca');
-var client  = mqtt.connect('mqtt://192.168.5.110');
+var client  = mqtt.connect('mqtt://192.168.0.103');
 let net = require('net');
 
 
@@ -86,6 +87,8 @@ var ApiConfig = {
 
 UserRoute.init(secureApi);
 ZoneRoute.init(secureApi);
+DeviceRoute.init(secureApi);
+
 
 MqttSubsriber.init(client);
 

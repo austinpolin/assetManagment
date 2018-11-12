@@ -1,0 +1,38 @@
+{
+    "getSchema":{
+       "type": "object",
+       "required": [
+         "id"     
+       ],
+       "properties": {
+         "id" : {
+           "type": "string"
+         }
+       }
+    },
+    "postSchema":{
+        "type": "object",
+        "required": [
+          "name",
+          "serial",
+          "type"   
+        ],
+        "properties": {
+          "name" : {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 50
+          },
+          "serial": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 50
+          },
+          "type":{
+            "type": "number",
+            "minLength": 1,
+            "maxLength": 2
+          }
+        }
+     }
+}

@@ -1,7 +1,7 @@
 let db = require('../../config/mysql');
 let dbFunc = require('../../config/db-function');
 let messages = require('../schema/responceSchema.json');
-let uniqid = require('uniqid');
+
 
 var zoneModel = {
     getAllZone:getAllZone,
@@ -15,8 +15,6 @@ var zoneModel = {
  function addZone(zone) {
      console.log("Zone data in model: " + JSON.stringify(zone));
      let name = zone.name;
-     let code = uniqid(name+'-');
-
      return new Promise((resolve,reject) => {
         db.query("select zoneName from zones where zoneName ='"+name+"'",(err,rows,fields)=>{
            if(err) {

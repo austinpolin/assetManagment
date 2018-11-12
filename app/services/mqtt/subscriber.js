@@ -12,7 +12,7 @@ function MqttSub(c) {
   c.on('message', function (topic, message) {
   const context = message;
   if (topic == "assetTopic"){
-  saveClinetData.storeData(context);
+  saveClinetData.MqttstoreData(context);
  } else {
         console.log(topic + 'is invalid');
     }
