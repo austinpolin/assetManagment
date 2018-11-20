@@ -1,8 +1,6 @@
 # Asset Tracking System
 
-A simple and structured way boilerplate for Node with MySQL, equipped with MVC layer model with basic validation of schema and common error handler, authentication and easily pluggable code base.
-
-This Boilerplate have a basic CRUD operation with MySQL, authetication of API endpoint with JWT Token and Validation of request and response of each route. It contained a documentation folder which contain swagger documentation easy for front-end developer to use and understand. It contained Pm2 which helps to restart, reload and monitor application in production, provides zero downtime availability. It has Nodemailer which will send email. It has bcrypt module which will encrypt password and make it more secure. It contain Artillery for load testing.
+Asset Tracking System is a project for tracking the device indoor and outdoor
 
 # PreRequisite
 
