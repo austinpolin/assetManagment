@@ -1,4 +1,5 @@
 let saveClinetData = require('../storage/casendraStorage');
+let checkdevice = require('../storage/CheckDevice');
 function init(netModule, settings){
         let server = netModule.createServer();
         
@@ -24,14 +25,32 @@ function init(netModule, settings){
                         console.log("Tcp Requested Data: " + JSON.stringify(Req));
                         var objLeng = Object.keys(Req).length;
                         console.log("Object Leng: " + objLeng);
+                       
                         if(objLeng === 1){
-                            console.log("Check Imei in Mysql: ");
-                            var rep = '{"status": 0,"config": { "uptime": 5}}';
-                            
-                            conn.write(rep);
-                            //conn.destroy();
+                            checkdevice.checkDeviceTcp(Req).then((data, err)=>{
+                                console.log("Responce check device: " + data)
+                                if(data == 1){
+                                    var res = '{"status": 1}'
+                                    conn.write(res);
+                                    conn.destroy();
+                                }else{
+                                    conn.write(data);
+                                    conn.destroy();
+                                }
+                            });
                         }else{
-                            console.log("Save data in casendra")
+                            saveClinetData.TcpstoreData(Req).then((data)=> {
+                                console.log("Responce from TCP store function: " + data)
+                                if(data == 1){
+                                    var res = '{"status": 1}'
+                                    conn.write(res);
+                                    conn.destroy();
+                                }else{
+                                    conn.write(data);
+                                    conn.destroy();
+                                }
+
+                            });
                         }
                     }catch(err){
                         console.log(err);

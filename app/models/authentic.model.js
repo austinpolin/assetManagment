@@ -15,10 +15,22 @@ function authentic(authenticData) {
             } else {
                 var passKey = md5(authenticData.password);
                 if(passKey === rows[0].password){
-                    resolve(rows);
+                    let resp = {"userId": rows[0].id, "firstName": rows[0].firstName, "lastName": rows[0].lastName, "userType": rows[0].userType};
+                    resolve(resp);
                 }else{
                     reject({"success":false,"message":"password doesnot match"});
                 }
+                // bcrypt.compare(authenticData.password, rows[0].password, function (err, isMatch) {
+                //     if (err) {
+                //         reject(error);
+                //     } else if (isMatch) {
+                //         resolve(rows);
+                //     }
+                //     else {
+                //         reject({"success":false,"message":"password doesnot match"});
+                //     }
+                // });
+
             }
         });
     });
