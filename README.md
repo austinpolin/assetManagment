@@ -4,7 +4,6 @@ Asset Tracking System is a project for tracking the device indoor and outdoor
 
 # PreRequisite
 
-* xampp/lampp/wampp application to run MySQL database and Apache server [Download from here](https://www.apachefriends.org/download.html).
 * Download Node js and install in your operating system. [Download from here](https://nodejs.org/en/download/)
 * Postman a desktop app or you can use it [chrome extension](https://chrome.google.com/webstore/category/extensions) for API testing.[Download from here](https://www.getpostman.com/apps) 
 
@@ -91,10 +90,6 @@ npm install bcrypt
 
 ---
 
-# Table Creation In DB
-
-1. Create Table user with `id,name,age,state,country` columns.
-2. you can try creating your table as well just need to change query and table name in model section.
 
 # Get Started
 
